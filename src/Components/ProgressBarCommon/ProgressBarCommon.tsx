@@ -18,7 +18,7 @@ export const ProgressBarCommon: FC = () => {
   return (
     <div>
       <CircularProgressBar
-        strokeWidth={10}
+        strokeWidth={5}
         sqSize={200}
         percentage={percentage}
       />

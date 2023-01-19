@@ -7,9 +7,11 @@ type CircularProgressBarType = {
   strokeWidth: number;
 };
 const CircleBackground = styled.circle`
-  stroke: #ddd;
-  fill: none;
+  stroke: #648e95;
+  fill: #4de1e8;
+  paint-order: stroke;
 `;
+
 const CircleProgress = styled.circle`
   fill: none;
   stroke: #fff;
@@ -17,7 +19,7 @@ const CircleProgress = styled.circle`
   stroke-linejoin: round;
 `;
 const CircleText = styled.text`
-  font-size: 3em;
+  font-size: 2rem;
   font-weight: bold;
   fill: white;
 `;
@@ -42,9 +44,9 @@ export const CircularProgressBar: FC<CircularProgressBarType> = ({
       <CircleBackground
         cx={sqSize / 2}
         cy={sqSize / 2}
-        r={radius}
+        r={radius / 1.5}
         // strokeWidth={`${strokeWidth}px`}
-        strokeWidth={0}
+        strokeWidth={radius / 1.7}
       />
       <CircleProgress
         cx={sqSize / 2}
