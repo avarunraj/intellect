@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, ChangeEvent } from "react";
 import styled from "@emotion/styled";
 import { CircularSVG } from "./CircularSVG/CircularSVG";
 import {
@@ -22,10 +22,15 @@ export const CircularProgressBar: FC<CircularProgressBarPropsType> = ({
   svgSize,
   progressCircleBarWidth,
 }) => {
+  // state related to percentage
   const [percentage, setPercentage] = useState(10);
 
-  const handleChangeEvent = (e: any) => {
-    setPercentage(e.target.value);
+  /**
+   * handles changing percentage change
+   * @param event : input change event
+   */
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setPercentage(Number(event.target.value));
   };
 
   return (
@@ -43,7 +48,7 @@ export const CircularProgressBar: FC<CircularProgressBarPropsType> = ({
           max="10"
           step="1"
           value={percentage}
-          onChange={handleChangeEvent}
+          onChange={handleInputChange}
         />
       </div>
     </ProgressBarWrapper>

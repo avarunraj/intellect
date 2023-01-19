@@ -1,7 +1,6 @@
 import { FC } from "react";
 import styled from "@emotion/styled";
-import { CircularProgressBarPropsType, CircularSVGPropsType } from "../../Common/CommonTypesAndData";
-
+import { CircularSVGPropsType } from "../../Common/CommonTypesAndData";
 
 const CircleBackground = styled.circle`
   stroke: #406d7d;
