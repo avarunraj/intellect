@@ -16,6 +16,7 @@ const ProgressBarWrapper = styled.div<inputPropType>`
   height: ${(props) => props.svgSize + 50}px;
   background: #2b5c6e;
   padding: 1rem;
+  margin: 1rem;
 `;
 
 export const CircularProgressBar: FC<CircularProgressBarPropsType> = ({
