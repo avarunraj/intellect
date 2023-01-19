@@ -52,14 +52,12 @@ export const CircularProgressBar: FC<CircularProgressBarType> = ({
         cx={sqSize / 2}
         cy={sqSize / 2}
         r={radius}
-        // strokeWidth={`${strokeWidth}px`}
         strokeWidth={radius / 1.7}
       />
       <CircleBackground
         cx={sqSize / 2}
         cy={sqSize / 2}
         r={radius / 2}
-        // strokeWidth={`${strokeWidth}px`}
         strokeWidth={radius / 1.7}
       />
       <CircleProgress
