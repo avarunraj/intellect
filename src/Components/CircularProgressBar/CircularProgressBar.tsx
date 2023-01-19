@@ -7,9 +7,16 @@ type CircularProgressBarType = {
   strokeWidth: number;
 };
 const CircleBackground = styled.circle`
-  stroke: #648e95;
+  stroke: #406d7d;
   fill: #4de1e8;
   paint-order: stroke;
+`;
+
+const CircleDash = styled.circle`
+  stroke-width: 5;
+  stroke-dasharray: 14;
+  fill: none;
+  stroke: #558396;
 `;
 
 const CircleProgress = styled.circle`
@@ -41,17 +48,24 @@ export const CircularProgressBar: FC<CircularProgressBarType> = ({
 
   return (
     <svg width={sqSize} height={sqSize} viewBox={viewBox}>
+      <CircleDash
+        cx={sqSize / 2}
+        cy={sqSize / 2}
+        r={radius}
+        // strokeWidth={`${strokeWidth}px`}
+        strokeWidth={radius / 1.7}
+      />
       <CircleBackground
         cx={sqSize / 2}
         cy={sqSize / 2}
-        r={radius / 1.5}
+        r={radius / 2}
         // strokeWidth={`${strokeWidth}px`}
         strokeWidth={radius / 1.7}
       />
       <CircleProgress
         cx={sqSize / 2}
         cy={sqSize / 2}
-        r={radius}
+        r={radius / 1.25}
         strokeWidth={`${strokeWidth}px`}
         // Start progress marker at 12 O'Clock
         transform={`rotate(-90 ${sqSize / 2} ${sqSize / 2})`}
