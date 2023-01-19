@@ -5,3 +5,8 @@ export type TriangleStatusBarType = {
 export type TriangleStatusBarInputType = {
   svgSize: number;
 };
+
+export type TriangleStatusBarInputItemType = {
+  height: number;
+  width: number;
+};

@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <CircularProgressBar svgSize={200} progressCircleBarWidth={5} />
-      <TriangleStatusBar widgetSize={200} />
+      <TriangleStatusBar widgetSize={220} />
     </div>
   );
 }
