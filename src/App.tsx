@@ -1,11 +1,11 @@
 
 import './App.css';
-import { ProgressBarCommon } from './Components/ProgressBarCommon/ProgressBarCommon';
+import { CircularProgressBar } from './Components/CircularProgressBar/CircularProgressBar';
 
 function App() {
   return (
     <div className="App">
-      <ProgressBarCommon/>
+      <CircularProgressBar svgSize={200} progressCircleBarWidth={5}/>
     </div>
   );
 }
