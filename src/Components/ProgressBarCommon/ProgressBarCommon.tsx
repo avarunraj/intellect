@@ -10,7 +10,7 @@ const LinearProgress = styled.input`
 
 
 export const ProgressBarCommon: FC = () => {
-  const [percentage, setPercentage] = useState(25);
+  const [percentage, setPercentage] = useState(10);
 
   const handleChangeEvent = (e: any) => {
     setPercentage(e.target.value);
@@ -26,7 +26,7 @@ export const ProgressBarCommon: FC = () => {
         <LinearProgress
           type="range"
           min="0"
-          max="100"
+          max="10"
           step="1"
           value={percentage}
           onChange={handleChangeEvent}

@@ -12,7 +12,7 @@ const CircleBackground = styled.circle`
 `;
 const CircleProgress = styled.circle`
   fill: none;
-  stroke: red;
+  stroke: #fff;
   stroke-linecap: round;
   stroke-linejoin: round;
 `;
@@ -35,7 +35,7 @@ export const CircularProgressBar: FC<CircularProgressBarType> = ({
   // Arc length at 100% coverage is the circle circumference
   const dashArray = radius * Math.PI * 2;
   // Scale 100% coverage overlay with the actual percent
-  const dashOffset = dashArray - (dashArray * percentage) / 100;
+  const dashOffset = dashArray - (dashArray * percentage) / 10;
 
   return (
     <svg width={sqSize} height={sqSize} viewBox={viewBox}>
@@ -43,7 +43,8 @@ export const CircularProgressBar: FC<CircularProgressBarType> = ({
         cx={sqSize / 2}
         cy={sqSize / 2}
         r={radius}
-        strokeWidth={`${strokeWidth}px`}
+        // strokeWidth={`${strokeWidth}px`}
+        strokeWidth={0}
       />
       <CircleProgress
         cx={sqSize / 2}
