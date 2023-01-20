@@ -1,0 +1,43 @@
+Project Details
+------------------------------------------
+This ReactJS based Application is using typescript template,
+a package called emotion to handle css (styled components),
+jest for unit testing.
+Application provides two widgets 
+   1) Circular progress bar
+       User can change the slider at the bottom and
+       number inside the circle and the circular bar around the circle will
+       change. Range is 0-10.
+       usage example : <CircularProgressBar svgSize={200} progressCircleBarWidth={5} />
+       input props   : svgSize -> to handle size of widget (value will be handled in px)
+                       progressCircleBarWidth -> to handle thickness of progress circle
+   2) TriangleStatusBar
+       Users can select any bar on the scale, range is 1-5.
+       usage example : <TriangleStatusBar widgetSize={200} />
+       input props   : widgetSize -> to handle size of widget(value will be handled in px) 
+      
+
+
+Design/Architecture details
+-------------------------------------------
+The project is created with create-react-app development environment,The project structure includes
+1)Project Directory  
+2)src 
+3)Public 
+4)Components 
+5)Node modules
+6)Common
+
+   *)The source (src) folder is where all the essential files and folders are listed:
+    eg) Components : The tsx files that is shown in DOM
+   
+   *)The public folder contains all of the project's static files, such as logo, fonts, images etc 
+
+   *)Resuable components are added in common
+   
+
+
+
+   
+
+
