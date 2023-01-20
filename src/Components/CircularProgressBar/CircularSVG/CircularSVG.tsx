@@ -37,8 +37,8 @@ export const CircularSVG: FC<CircularSVGPropsType> = ({
   const radius = (sqSize - strokeWidth) / 2;
   // Enclose cicle in a circumscribing square
   const viewBox = `0 0 ${sqSize} ${sqSize}`;
-  // Arc length at 100% coverage is the circle circumference
-  const dashArray = radius * Math.PI * 2;
+  // Arc length at 100% coverage is the circle circumference and radius/1.25 is the radius of circleProgress
+  const dashArray = radius / 1.25 * Math.PI * 2;
   // Scale 100% coverage overlay with the actual percent
   const dashOffset = dashArray - (dashArray * percentage) / 10;
 
@@ -68,7 +68,7 @@ export const CircularSVG: FC<CircularSVGPropsType> = ({
           strokeDashoffset: dashOffset,
         }}
       />
-      <CircleText x="50%" y="50%" dy=".3em" textAnchor="middle">
+      <CircleText x="50%" y="50%" dy=".3em" textAnchor="middle" >
         {percentage}
       </CircleText>
     </svg>
