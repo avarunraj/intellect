@@ -75,7 +75,7 @@ const ProgressBarItem = styled.div<TriangleStatusBarInputItemType>`
   }
 `;
 
-const ProgressBarItem2 = styled.div<TriangleStatusBarInputItemType>`
+const TrapezoidItem = styled.div<TriangleStatusBarInputItemType>`
   transform: rotate(180deg);
   border-bottom: ${(props) => props.height / 8}px solid
     ${(props) => (props.isChecked ? " #fff" : "#7d9da8")};
@@ -106,18 +106,25 @@ const ProgressBarTriangle = styled.div<TriangleStatusBarInputItemType>`
 export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
   widgetSize,
 }) => {
+  // state to handle checkedStatus
   const initialStatusArray = [
     { id: 0, checkedStatus: false },
     { id: 1, checkedStatus: false },
     { id: 2, checkedStatus: false },
     { id: 3, checkedStatus: false },
-    { id: 4, checkedStatus: false },
+    { id: 4, checkedStatus: true },
   ];
 
+  //states
   const [checkedStatusArray, SetCheckedStatusArray] =
     useState(initialStatusArray);
   const [selectedItemId, setSelectedItemId] = useState(4);
 
+  /**
+   * handles changing checked status
+   * @param id : id of the clicked item
+   * for items with id less than clicked item id , selected status is changed to true
+   */
   const handleOnClick = (id: number) => {
     let tempStatusCheckedArray = [...checkedStatusArray];
     setSelectedItemId(id);
@@ -133,6 +140,11 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
     SetCheckedStatusArray(tempStatusCheckedArray);
   };
 
+  /**
+   * returns status text based on selected range
+   * if max selected item id is less than 2 then 'High' otherwise 'Low'
+   * if max selected item id is 2 , then 'Medium'
+   */
   const handleStatusText = () => {
     let statusText = "";
     if (selectedItemId === 2) {
@@ -141,7 +153,7 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
     selectedItemId < 2 ? (statusText = "High") : (statusText = "Low");
     return statusText;
   };
-  
+
   return (
     <ProgressBarWrapper svgSize={widgetSize}>
       <TextWrapper svgSize={widgetSize}>{handleStatusText()}</TextWrapper>
@@ -170,7 +182,7 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
             handleOnClick(2);
           }}
         />
-        <ProgressBarItem2
+        <TrapezoidItem
           width={widgetSize * 0.183}
           height={widgetSize}
           isChecked={checkedStatusArray[3].checkedStatus}
