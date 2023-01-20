@@ -9,4 +9,5 @@ export type TriangleStatusBarInputType = {
 export type TriangleStatusBarInputItemType = {
   height: number;
   width: number;
+  isChecked:boolean;
 };
