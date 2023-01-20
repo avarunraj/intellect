@@ -1,6 +1,6 @@
 import { FC, useState, ChangeEvent } from "react";
 import styled from "@emotion/styled";
-import { CircularSVG } from "./CircularSVG/CircularSVG";
+import { CircularSVG } from "./CircularSVG";
 import {
   CircularProgressBarPropsType,
   inputPropType,

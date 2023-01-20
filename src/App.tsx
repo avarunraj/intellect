@@ -1,6 +1,6 @@
 import "./App.css";
-import { CircularProgressBar } from "./Components/CircularProgressBar/CircularProgressBar";
-import { TriangleStatusBar } from "./Components/TriangleStatusBar/TriangleStatusBar";
+import { CircularProgressBar } from "./Components/CircularProgressBar";
+import { TriangleStatusBar } from "./Components/TriangleStatusBar";
 
 function App() {
   return (
