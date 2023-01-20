@@ -31,8 +31,8 @@ const ProgressBarWrapper = styled.div<TriangleStatusBarInputType>`
     .triangle,
     .triangle:before,
     .triangle:after {
-      width: 15px;
-      height: 15px;
+      width: ${(props) => props.svgSize * 0.0681}px;
+      height: ${(props) => props.svgSize * 0.0681}px;
       border-top-right-radius: 55%;
     }
 
@@ -47,6 +47,17 @@ const ProgressBarWrapper = styled.div<TriangleStatusBarInputType>`
       transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
     }
   }
+`;
+
+const TextWrapper = styled.div<TriangleStatusBarInputType>`
+  width: ${(props) => props.svgSize}px;
+  height: ${(props) => props.svgSize / 8}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
 `;
 
 const ProgressBarItem = styled.div<TriangleStatusBarInputItemType>`
@@ -105,9 +116,11 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
 
   const [checkedStatusArray, SetCheckedStatusArray] =
     useState(initialStatusArray);
+  const [selectedItemId, setSelectedItemId] = useState(4);
 
   const handleOnClick = (id: number) => {
     let tempStatusCheckedArray = [...checkedStatusArray];
+    setSelectedItemId(id);
     tempStatusCheckedArray = tempStatusCheckedArray.map((item) => {
       if (id <= item.id) {
         item.checkedStatus = true;
@@ -119,8 +132,19 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
     });
     SetCheckedStatusArray(tempStatusCheckedArray);
   };
+
+  const handleStatusText = () => {
+    let statusText = "";
+    if (selectedItemId === 2) {
+      return "Medium";
+    }
+    selectedItemId < 2 ? (statusText = "High") : (statusText = "Low");
+    return statusText;
+  };
+  
   return (
     <ProgressBarWrapper svgSize={widgetSize}>
+      <TextWrapper svgSize={widgetSize}>{handleStatusText()}</TextWrapper>
       <div className="progress-bar-container">
         <ProgressBarItem
           width={widgetSize * 0.78}
