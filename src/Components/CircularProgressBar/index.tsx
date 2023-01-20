@@ -50,6 +50,7 @@ export const CircularProgressBar: FC<CircularProgressBarPropsType> = ({
           step="1"
           value={percentage}
           onChange={handleInputChange}
+          id={"input-slider"}
         />
       </div>
     </ProgressBarWrapper>

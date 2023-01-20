@@ -52,6 +52,7 @@ export const CircularSVG: FC<CircularSVGPropsType> = ({
         cy={sqSize / 2}
         r={radius}
         strokeWidth={radius / 1.7}
+        id={"dashed-circle"}
       />
       <CircleBackground
         cx={sqSize / 2}
@@ -70,6 +71,7 @@ export const CircularSVG: FC<CircularSVGPropsType> = ({
           strokeDasharray: dashArray,
           strokeDashoffset: dashOffset,
         }}
+        id={"progress-circle"}
       />
       <CircleText
         x="50%"
@@ -77,6 +79,7 @@ export const CircularSVG: FC<CircularSVGPropsType> = ({
         dy=".3em"
         textAnchor="middle"
         svgSize={sqSize}
+        id={"progress-text"}
       >
         {percentage}
       </CircleText>
