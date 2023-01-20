@@ -7,8 +7,8 @@ import {
 } from "./Common/CommonTypes";
 
 const ProgressBarWrapper = styled.div<TriangleStatusBarInputType>`
-  width: ${(props) => props.svgSize}px;
-  height: ${(props) => props.svgSize}px;
+  width: ${(props) => props.svgSize }px;
+  height: ${(props) => props.svgSize + props.svgSize/4}px;
   background: #2b5c6e;
   padding: 1rem;
   margin: 1rem;
@@ -57,7 +57,7 @@ const TextWrapper = styled.div<TriangleStatusBarInputType>`
   align-items: center;
   padding-bottom: 0.5rem;
   color: #fff;
-  font-size: 1rem;
+  font-size: ${(props) => props.svgSize/150}em;
 `;
 
 const ProgressBarItem = styled.div<TriangleStatusBarInputItemType>`

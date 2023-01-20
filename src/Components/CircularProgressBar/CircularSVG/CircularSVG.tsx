@@ -1,6 +1,9 @@
 import { FC } from "react";
 import styled from "@emotion/styled";
-import { CircularSVGPropsType } from "../Common/CommonTypesAndData";
+import {
+  CircularSVGPropsType,
+  inputPropType,
+} from "../Common/CommonTypesAndData";
 
 const CircleBackground = styled.circle`
   stroke: #406d7d;
@@ -21,8 +24,8 @@ const CircleProgress = styled.circle`
   stroke-linecap: round;
   stroke-linejoin: round;
 `;
-const CircleText = styled.text`
-  font-size: 2rem;
+const CircleText = styled.text<inputPropType>`
+  font-size: ${(props) => props.svgSize / 100}em;
   font-weight: bold;
   fill: white;
 `;
@@ -38,7 +41,7 @@ export const CircularSVG: FC<CircularSVGPropsType> = ({
   // Enclose cicle in a circumscribing square
   const viewBox = `0 0 ${sqSize} ${sqSize}`;
   // Arc length at 100% coverage is the circle circumference and radius/1.25 is the radius of circleProgress
-  const dashArray = radius / 1.25 * Math.PI * 2;
+  const dashArray = (radius / 1.25) * Math.PI * 2;
   // Scale 100% coverage overlay with the actual percent
   const dashOffset = dashArray - (dashArray * percentage) / 10;
 
@@ -68,7 +71,13 @@ export const CircularSVG: FC<CircularSVGPropsType> = ({
           strokeDashoffset: dashOffset,
         }}
       />
-      <CircleText x="50%" y="50%" dy=".3em" textAnchor="middle" >
+      <CircleText
+        x="50%"
+        y="50%"
+        dy=".3em"
+        textAnchor="middle"
+        svgSize={sqSize}
+      >
         {percentage}
       </CircleText>
     </svg>
