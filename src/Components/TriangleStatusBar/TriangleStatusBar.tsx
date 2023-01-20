@@ -56,20 +56,28 @@ const ProgressBarItem = styled.div<TriangleStatusBarInputItemType>`
   margin-bottom: 0.5rem;
   cursor: pointer;
   border-radius: 15px 15px 10px 10px;
+  transform: rotate(180deg);
+  border-top-right-radius: 20px 30px;
+  border-top-left-radius: 20px 30px;
   &:hover {
     background: #fff;
   }
 `;
 
 const ProgressBarItem2 = styled.div<TriangleStatusBarInputItemType>`
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height / 8}px;
+  transform: rotate(180deg);
+  border-bottom: ${(props) => props.height / 8}px solid
+    ${(props) => (props.isChecked ? " #fff" : "#7d9da8")};
+  border-left: ${(props) => props.height * 0.068}px solid transparent;
+  border-right: ${(props) => props.height * 0.068}px solid transparent;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  background: ${(props) => (props.isChecked ? " #fff" : "#7d9da8")};
-  border-radius: 15px 15px 6px 6px;
+  height: 0;
+  width: ${(props) => props.width}px;
   &:hover {
-    background: #fff;
+    border-bottom: ${(props) => props.height / 8}px solid #fff;
   }
 `;
 
@@ -115,7 +123,7 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
     <ProgressBarWrapper svgSize={widgetSize}>
       <div className="progress-bar-container">
         <ProgressBarItem
-          width={widgetSize}
+          width={widgetSize * 0.78}
           height={widgetSize}
           isChecked={checkedStatusArray[0].checkedStatus}
           onClick={() => {
@@ -123,7 +131,7 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
           }}
         />
         <ProgressBarItem
-          width={widgetSize * 0.68}
+          width={widgetSize * 0.613}
           height={widgetSize}
           isChecked={checkedStatusArray[1].checkedStatus}
           onClick={() => {
@@ -139,7 +147,7 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
           }}
         />
         <ProgressBarItem2
-          width={widgetSize * 0.22}
+          width={widgetSize * 0.183}
           height={widgetSize}
           isChecked={checkedStatusArray[3].checkedStatus}
           onClick={() => {
