@@ -183,6 +183,7 @@ export const TriangleStatusBar: FC<TriangleStatusBarType> = ({
           onClick={() => {
             handleOnClick(2);
           }}
+          id={"medium-bar"}
         />
         <TrapezoidItem
           width={widgetSize * 0.183}
