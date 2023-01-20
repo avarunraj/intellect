@@ -13,7 +13,7 @@ const CircleBackground = styled.circle`
 
 const CircleDash = styled.circle`
   stroke-width: 5;
-  stroke-dasharray: 14;
+  stroke-dasharray: 9;
   fill: none;
   stroke: #558396;
 `;

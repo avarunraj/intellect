@@ -57,7 +57,7 @@ const TextWrapper = styled.div<TriangleStatusBarInputType>`
   align-items: center;
   padding-bottom: 0.5rem;
   color: #fff;
-  font-size: ${(props) => props.svgSize / 150}em;
+  font-size: ${(props) => props.svgSize / 180}em;
 `;
 
 const ProgressBarItem = styled.div<TriangleStatusBarInputItemType>`

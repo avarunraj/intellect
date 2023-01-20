@@ -17,6 +17,23 @@ const ProgressBarWrapper = styled.div<inputPropType>`
   background: #2b5c6e;
   padding: 1rem;
   margin: 1rem;
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    background-color: #4de1e8;
+    width: ${(props) => props.svgSize}px;
+    height: ${(props) => props.svgSize / 20}px;
+    border-radius: ${(props) => props.svgSize * 0.1}px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #4de1e8;
+    width: ${(props) => props.svgSize * 0.1}px;
+    height: ${(props) => props.svgSize * 0.1}px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+  }
 `;
 
 export const CircularProgressBar: FC<CircularProgressBarPropsType> = ({
