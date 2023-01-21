@@ -4,7 +4,7 @@ import { CircularSVG } from "./CircularSVG";
 import {
   CircularProgressBarPropsType,
   inputPropType,
-} from "./Common/CommonTypesAndData";
+} from "../../Common/CommonTypesAndData";
 
 const LinearProgress = styled.input<inputPropType>`
   margin: 20px auto;
