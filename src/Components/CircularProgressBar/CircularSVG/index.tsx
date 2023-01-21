@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {
   CircularSVGPropsType,
   inputPropType,
-} from "../../../Common/CommonTypesAndData";
+} from "../../../Common/types";
 
 const CircleBackground = styled.circle`
   stroke: #406d7d;

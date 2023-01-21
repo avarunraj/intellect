@@ -4,7 +4,7 @@ import {
   TriangleStatusBarInputItemType,
   TriangleStatusBarInputType,
   TriangleStatusBarType,
-} from "../../Common/CommonTypesAndData";
+} from "../../Common/types";
 
 const ProgressBarWrapper = styled.div<TriangleStatusBarInputType>`
   width: ${(props) => props.svgSize}px;
